@@ -10,84 +10,66 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Digital Tasbeeh',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
-    );
-  }
-}
+      home: Scaffold(
+        appBar: AppBar(),
+        body: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              color: Colors.red,
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundColor: Colors.deepPurple,
+                  ),
+                  const Divider(),
+                  Text('Amani'),
+                  const Divider(),
+                  Text('devloper'),
+                  const Divider(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Email'),
+                      Text('altaear@gmail.com'),
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+                    ],
+                  ),
+                  const Divider(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('phone'),
+                      Text('776417243'),
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+                    ],
+                  ),
+                  const Divider(),
+                  Text('Skills'),
+                  const Divider(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        children: [
+                          Text('Time Management',style: TextStyle(color: Colors.white,fontSize: 11),textAlign: TextAlign.center,),
+                          Text('Mobile App Development (Android/iOS)',style: TextStyle(color: Colors.white,fontSize: 11),textAlign: TextAlign.center,),
+                          Text('Flutter/Dart Development', style: TextStyle(color: Colors.white,fontSize: 11),textAlign: TextAlign.center,)
+                        ],
+                      )
+                    ],
+                  )
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  // 1. متغير الحالة الجديد لحفظ اسم الذكر الأخير
-  String _lastZikr = 'الله أكبر';
-
-  // 2. تعديل الدالة لتقبل اسم الذكر (Zikr) كمدخل
-  void _incrementCounter(String zikr) {
-    setState(() {
-      _counter++;
-      _lastZikr = zikr; // تحديث اسم الذكر في كل ضغطة
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'سبحه الكترونيه',
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: const Color(0xFF3366FF),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-
-            // 3. استخدام المتغير _lastZikr لعرض اسم الزر المضغوط
-            Text(
-              _lastZikr,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-
-            const SizedBox(height: 20),
-            Text(
-              '$_counter',
-              style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 50),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                // 4. تعديل onPressed لتمرير القيمة
-                ElevatedButton(
-                  onPressed: () => _incrementCounter('سبحان الله'),
-                  child: const Text('سبحان الله'),
-                ),
-                ElevatedButton(
-                  onPressed: () => _incrementCounter('الحمد لله'),
-                  child: const Text('الحمد لله'),
-                ),
-                ElevatedButton(
-                  onPressed: () => _incrementCounter('الله أكبر'),
-                  child: const Text('الله أكبر'),
-                ),
-              ],
-            ),
+                ],
+              ),
+            )
           ],
         ),
+
       ),
+
+
     );
   }
 }
